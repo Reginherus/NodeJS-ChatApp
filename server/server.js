@@ -22,7 +22,7 @@ io.on('connection', (socket) => {
 
 	socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
 
-	socket.broadcast.emit('newMessage', generateMessage('Admin:', 'New User joined!'));
+	socket.broadcast.emit('newMessage', generateMessage('Admin', 'New User joined!'));
 
 	socket.on('createMessage', function (message, callback) {
 		console.log(message);
@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
 	});
 
 	socket.on('createLocationMessage', (coords) => {
-		io.emit('newLocationMessage', generateLocationMessage('Admin: ', coords.latitude, coords.longitude))
+		io.emit('newLocationMessage', generateLocationMessage('Admin ', coords.latitude, coords.longitude))
 	})
 
 	socket.on('disconnect', () => {
