@@ -40,11 +40,6 @@ io.on('connection', (socket) => {
 	});
 });
 
-
-
-
-
-
 app.get('/', () => {
 	res.render('index.html');
 });
