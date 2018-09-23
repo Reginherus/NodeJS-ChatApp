@@ -20,8 +20,8 @@ describe('generateMessage', () => {
 describe('generateLocationMessage', () => {
   it('should generate correct location object', () => {
     var from = 'Admin';
-    latitude = 1;
-    longitude = 1
+        latitude = 1;
+        longitude = 1
     message = generateLocationMessage(from, latitude, longitude);
     
     expect(message.from).toBe(from);
