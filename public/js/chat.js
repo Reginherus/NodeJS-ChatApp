@@ -30,7 +30,7 @@ socket.on('connect', function() {
   });
 });
 
-socket.on('disconnect', function (users) {
+socket.on('disconnect', function () {
   console.log('Client disconnected');
 });
 socket.on('updateUserList', function (users) {
@@ -73,8 +73,7 @@ jQuery('#message-form').on('submit', function (e) {
   var messageTextbox = jQuery('[name=message]')
 
   socket.emit('createMessage', {
-    from: 'User',
-    text: jQuery('[name=message]').val()
+    text: messageTextbox.val()
   }, function () {
     jQuery('[name]').val('');
   });
